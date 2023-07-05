@@ -20,7 +20,7 @@ namespace UAS_PABD
         {
             cbxNama.Enabled = false;
             cbxJnsvilla.Enabled = false;
-            txtLm.Enabled = false;
+            txtLm.Visible = false;
             txtHrga.Visible = false;
             cbxNama.SelectedIndex = -1;
             cbxJnsvilla.SelectedIndex = -1;
@@ -44,24 +44,26 @@ namespace UAS_PABD
         {
 
         }
-        private void cbNama()
-        {
-            koneksi.Open();
-            string str = "select nama_tamu from dbo.Tamu where\r\nnot EXISTS(select id_status from dbo.status_mahasiswa where\r\nstatus_mahasiswa.nim = mahasiswa.nim)";
-            SqlCommand cmd = new SqlCommand(str, koneksi);
-            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            cmd.ExecuteReader();
-            koneksi.Close();
-
-            cbxNama.DisplayMember = "nama_tamu";
-            cbxNama.ValueMember = "nim";
-            cbxNama.DataSource = ds.Tables[0];
-        }
+        
         private void cbxNama_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+        }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            cbxNama.Enabled = true;
+            cbxJnsvilla.Enabled = true;
+            txtLm.Visible = true;
+            txtHrga.Visible = true;
+            btnClear.Enabled = true;
+            btnAdd.Enabled = true;
+            btnSave.Enabled = true;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            refreshform();
         }
     }
 }
