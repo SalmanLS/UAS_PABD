@@ -88,6 +88,7 @@
             this.Controls.Add(this.btnTamu);
             this.Name = "Halaman_Utama";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Halaman_Utama_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -37,5 +37,10 @@ namespace UAS_PABD
             rs.Show();
             this.Hide();
         }
+
+        private void Halaman_Utama_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

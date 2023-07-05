@@ -89,6 +89,7 @@
             this.cbxNama.Name = "cbxNama";
             this.cbxNama.Size = new System.Drawing.Size(277, 24);
             this.cbxNama.TabIndex = 4;
+            this.cbxNama.SelectedIndexChanged += new System.EventHandler(this.cbxNama_SelectedIndexChanged);
             // 
             // cbxJnsvilla
             // 
@@ -157,6 +158,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Reservasi";
             this.Text = "Reservasi";
+            this.Load += new System.EventHandler(this.Reservasi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
