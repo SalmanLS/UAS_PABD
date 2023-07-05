@@ -217,6 +217,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Katering";
             this.Text = "Katering";
+            this.Load += new System.EventHandler(this.Katering_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

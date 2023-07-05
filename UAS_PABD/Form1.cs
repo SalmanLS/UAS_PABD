@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace UAS_PABD
 {
-    public partial class Katering : Form
+    public partial class Form1 : Form
     {
-        public Katering()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void Katering_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }
