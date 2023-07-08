@@ -39,6 +39,8 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtRsv = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +78,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(192, 198);
+            this.label4.Location = new System.Drawing.Point(192, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 20);
             this.label4.TabIndex = 3;
@@ -85,7 +87,7 @@
             // cbxNama
             // 
             this.cbxNama.FormattingEnabled = true;
-            this.cbxNama.Location = new System.Drawing.Point(312, 110);
+            this.cbxNama.Location = new System.Drawing.Point(360, 112);
             this.cbxNama.Name = "cbxNama";
             this.cbxNama.Size = new System.Drawing.Size(277, 24);
             this.cbxNama.TabIndex = 4;
@@ -94,28 +96,28 @@
             // cbxJnsvilla
             // 
             this.cbxJnsvilla.FormattingEnabled = true;
-            this.cbxJnsvilla.Location = new System.Drawing.Point(312, 139);
+            this.cbxJnsvilla.Location = new System.Drawing.Point(360, 142);
             this.cbxJnsvilla.Name = "cbxJnsvilla";
             this.cbxJnsvilla.Size = new System.Drawing.Size(277, 24);
             this.cbxJnsvilla.TabIndex = 5;
             // 
             // txtLm
             // 
-            this.txtLm.Location = new System.Drawing.Point(312, 170);
+            this.txtLm.Location = new System.Drawing.Point(360, 172);
             this.txtLm.Name = "txtLm";
             this.txtLm.Size = new System.Drawing.Size(277, 22);
             this.txtLm.TabIndex = 6;
             // 
             // txtHrga
             // 
-            this.txtHrga.Location = new System.Drawing.Point(312, 198);
+            this.txtHrga.Location = new System.Drawing.Point(360, 200);
             this.txtHrga.Name = "txtHrga";
             this.txtHrga.Size = new System.Drawing.Size(277, 22);
             this.txtHrga.TabIndex = 7;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(360, 272);
+            this.btnClear.Location = new System.Drawing.Point(360, 297);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(72, 25);
             this.btnClear.TabIndex = 20;
@@ -125,7 +127,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(196, 272);
+            this.btnAdd.Location = new System.Drawing.Point(196, 297);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(72, 25);
             this.btnAdd.TabIndex = 21;
@@ -135,18 +137,37 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(517, 272);
+            this.btnSave.Location = new System.Drawing.Point(515, 297);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(72, 25);
             this.btnSave.TabIndex = 22;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(192, 239);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(148, 20);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Tanggal Reservasi";
+            // 
+            // dtRsv
+            // 
+            this.dtRsv.Location = new System.Drawing.Point(360, 239);
+            this.dtRsv.Name = "dtRsv";
+            this.dtRsv.Size = new System.Drawing.Size(277, 22);
+            this.dtRsv.TabIndex = 24;
+            // 
             // Reservasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dtRsv);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnClear);
@@ -179,5 +200,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dtRsv;
     }
 }
