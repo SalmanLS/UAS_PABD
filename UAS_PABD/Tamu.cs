@@ -19,6 +19,11 @@ namespace UAS_PABD
         private string nama, jk, notlfon, noktp,jln,kcmtn,kabupaten,krywn;
         private DateTime tgl;
 
+        private void cbxKrywn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void refreshform()
         {
             txtID.Text = "";

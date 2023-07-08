@@ -209,6 +209,7 @@
             this.cbxKrywn.Name = "cbxKrywn";
             this.cbxKrywn.Size = new System.Drawing.Size(145, 24);
             this.cbxKrywn.TabIndex = 17;
+            this.cbxKrywn.SelectedIndexChanged += new System.EventHandler(this.cbxKrywn_SelectedIndexChanged);
             // 
             // dtTanggal
             // 

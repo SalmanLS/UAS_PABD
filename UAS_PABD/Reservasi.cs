@@ -59,11 +59,43 @@ namespace UAS_PABD
             btnClear.Enabled = true;
             btnAdd.Enabled = true;
             btnSave.Enabled = true;
+            Tamucbx();
+            Villacbx();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             refreshform();
+        }
+
+        private void Tamucbx()
+        {
+            koneksi.Open();
+            string str = "select namaTamu from dbo.Tamu";
+            SqlCommand cmd = new SqlCommand(str,koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxNama.DisplayMember = "namaTamu";
+            cbxNama.ValueMember = "id_tamu";
+            cbxNama.DataSource = ds.Tables[0];
+        }
+
+        private void Villacbx()
+        {
+            koneksi.Open();
+            string str = "select Villa.no_villa, Jenis_Villa.jenisVilla\r\nfrom Villa\r\ninner join Jenis_Villa on Villa.kode_jenisVilla = Jenis_Villa.kode_jenisVilla;";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxJnsvilla.DisplayMember = "jenisVilla";
+            cbxJnsvilla.ValueMember = "no_villa";
+            cbxJnsvilla.DataSource = ds.Tables[0];
         }
     }
 }
