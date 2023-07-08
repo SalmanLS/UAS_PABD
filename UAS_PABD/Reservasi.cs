@@ -97,5 +97,12 @@ namespace UAS_PABD
             cbxJnsvilla.ValueMember = "no_villa";
             cbxJnsvilla.DataSource = ds.Tables[0];
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Halaman_Utama hu = new Halaman_Utama(); 
+            hu.Show();
+            this.Hide();
+        }
     }
 }

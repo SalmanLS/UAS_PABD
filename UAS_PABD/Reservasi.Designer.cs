@@ -41,6 +41,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dtRsv = new System.Windows.Forms.DateTimePicker();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -161,11 +162,24 @@
             this.dtRsv.Size = new System.Drawing.Size(277, 22);
             this.dtRsv.TabIndex = 24;
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBack.Location = new System.Drawing.Point(13, 17);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 25;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Reservasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dtRsv);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSave);
@@ -202,5 +216,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtRsv;
+        private System.Windows.Forms.Button btnBack;
     }
 }

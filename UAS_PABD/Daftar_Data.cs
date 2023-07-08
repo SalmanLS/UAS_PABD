@@ -16,5 +16,12 @@ namespace UAS_PABD
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Halaman_Utama hu = new Halaman_Utama();
+            hu.Show();
+            this.Hide();
+        }
     }
 }
