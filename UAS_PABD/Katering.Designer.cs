@@ -47,6 +47,8 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +65,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(202, 115);
+            this.label2.Location = new System.Drawing.Point(202, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 1;
@@ -73,7 +75,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(202, 144);
+            this.label3.Location = new System.Drawing.Point(202, 145);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 20);
             this.label3.TabIndex = 2;
@@ -92,7 +94,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(202, 174);
+            this.label5.Location = new System.Drawing.Point(202, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 20);
             this.label5.TabIndex = 4;
@@ -102,7 +104,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(202, 203);
+            this.label6.Location = new System.Drawing.Point(202, 115);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 20);
             this.label6.TabIndex = 5;
@@ -135,7 +137,7 @@
             // cbxNama
             // 
             this.cbxNama.FormattingEnabled = true;
-            this.cbxNama.Location = new System.Drawing.Point(336, 203);
+            this.cbxNama.Location = new System.Drawing.Point(336, 115);
             this.cbxNama.Name = "cbxNama";
             this.cbxNama.Size = new System.Drawing.Size(233, 24);
             this.cbxNama.TabIndex = 9;
@@ -144,26 +146,26 @@
             // 
             this.txtPorsi.Location = new System.Drawing.Point(336, 233);
             this.txtPorsi.Name = "txtPorsi";
-            this.txtPorsi.Size = new System.Drawing.Size(233, 22);
+            this.txtPorsi.Size = new System.Drawing.Size(34, 22);
             this.txtPorsi.TabIndex = 10;
             // 
             // txtHrga
             // 
-            this.txtHrga.Location = new System.Drawing.Point(336, 115);
+            this.txtHrga.Location = new System.Drawing.Point(336, 203);
             this.txtHrga.Name = "txtHrga";
-            this.txtHrga.Size = new System.Drawing.Size(233, 22);
+            this.txtHrga.Size = new System.Drawing.Size(111, 22);
             this.txtHrga.TabIndex = 11;
             // 
             // txtHari
             // 
-            this.txtHari.Location = new System.Drawing.Point(336, 144);
+            this.txtHari.Location = new System.Drawing.Point(336, 145);
             this.txtHari.Name = "txtHari";
-            this.txtHari.Size = new System.Drawing.Size(233, 22);
+            this.txtHari.Size = new System.Drawing.Size(34, 22);
             this.txtHari.TabIndex = 12;
             // 
             // dtTanggal
             // 
-            this.dtTanggal.Location = new System.Drawing.Point(336, 172);
+            this.dtTanggal.Location = new System.Drawing.Point(336, 173);
             this.dtTanggal.Name = "dtTanggal";
             this.dtTanggal.Size = new System.Drawing.Size(233, 22);
             this.dtTanggal.TabIndex = 13;
@@ -176,6 +178,7 @@
             this.btnAdd.TabIndex = 20;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClear
             // 
@@ -185,6 +188,7 @@
             this.btnClear.TabIndex = 21;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
@@ -194,6 +198,7 @@
             this.btnSave.TabIndex = 22;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnBack
             // 
@@ -206,11 +211,34 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(453, 203);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 23);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "@Porsi";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(376, 235);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 23);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "@Orang";
+            // 
             // Katering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClear);
@@ -256,5 +284,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

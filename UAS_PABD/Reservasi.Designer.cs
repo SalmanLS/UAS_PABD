@@ -31,17 +31,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.cbxNama = new System.Windows.Forms.ComboBox();
             this.cbxJnsvilla = new System.Windows.Forms.ComboBox();
-            this.txtLm = new System.Windows.Forms.TextBox();
-            this.txtHrga = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dtRsv = new System.Windows.Forms.DateTimePicker();
             this.btnBack = new System.Windows.Forms.Button();
+            this.txtLm = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -75,16 +74,6 @@
             this.label3.Text = "Lama Inap";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(192, 200);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Total Harga";
-            // 
             // cbxNama
             // 
             this.cbxNama.FormattingEnabled = true;
@@ -101,20 +90,6 @@
             this.cbxJnsvilla.Name = "cbxJnsvilla";
             this.cbxJnsvilla.Size = new System.Drawing.Size(277, 24);
             this.cbxJnsvilla.TabIndex = 5;
-            // 
-            // txtLm
-            // 
-            this.txtLm.Location = new System.Drawing.Point(360, 172);
-            this.txtLm.Name = "txtLm";
-            this.txtLm.Size = new System.Drawing.Size(277, 22);
-            this.txtLm.TabIndex = 6;
-            // 
-            // txtHrga
-            // 
-            this.txtHrga.Location = new System.Drawing.Point(360, 200);
-            this.txtHrga.Name = "txtHrga";
-            this.txtHrga.Size = new System.Drawing.Size(277, 22);
-            this.txtHrga.TabIndex = 7;
             // 
             // btnClear
             // 
@@ -150,15 +125,16 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(192, 239);
+            this.label5.Location = new System.Drawing.Point(192, 200);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 20);
             this.label5.TabIndex = 23;
             this.label5.Text = "Tanggal Reservasi";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // dtRsv
             // 
-            this.dtRsv.Location = new System.Drawing.Point(360, 239);
+            this.dtRsv.Location = new System.Drawing.Point(360, 200);
             this.dtRsv.Name = "dtRsv";
             this.dtRsv.Size = new System.Drawing.Size(277, 22);
             this.dtRsv.TabIndex = 24;
@@ -167,7 +143,7 @@
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBack.Location = new System.Drawing.Point(13, 17);
+            this.btnBack.Location = new System.Drawing.Point(713, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 25;
@@ -175,22 +151,38 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // txtLm
+            // 
+            this.txtLm.Location = new System.Drawing.Point(360, 172);
+            this.txtLm.Name = "txtLm";
+            this.txtLm.Size = new System.Drawing.Size(46, 22);
+            this.txtLm.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(412, 174);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Hari";
+            // 
             // Reservasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dtRsv);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.txtHrga);
             this.Controls.Add(this.txtLm);
             this.Controls.Add(this.cbxJnsvilla);
             this.Controls.Add(this.cbxNama);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -207,16 +199,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbxNama;
         private System.Windows.Forms.ComboBox cbxJnsvilla;
-        private System.Windows.Forms.TextBox txtLm;
-        private System.Windows.Forms.TextBox txtHrga;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtRsv;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox txtLm;
+        private System.Windows.Forms.Label label6;
     }
 }
