@@ -33,7 +33,7 @@ namespace UAS_PABD
         private void dataGridView()
         {
             koneksi.Open();
-            string str = "select Reservasi.kode_reservasi,Tamu.id_tamu, Tamu.namaTamu , Reservasi.tgl_reservasi, Reservasi.lamaSewa, Reservasi.no_villa\r\nfrom Reservasi\r\ninner join Tamu on Reservasi.id_tamu = Tamu.id_tamu;";
+            string str = "select*from Tamu";
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
