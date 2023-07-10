@@ -13,8 +13,8 @@ namespace UAS_PABD
 {
     public partial class Daftar_Katering : Form
     {
-        private string stringConnection = "data source=DESKTOP-NKUDL8D\\DIMASDAMAR;" +
-            "database=Villa;User ID=sa; Password=magic118";
+        private string stringConnection = "data source=LUTHFI\\MCH35;" +
+           "database=Villa;User ID=sa; Password=12345";
         private SqlConnection koneksi;
         public Daftar_Katering()
         {
