@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Daftar Tamu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daftar Tamu.Designer.cs">
+      <DependentUpon>Daftar Tamu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Daftar_Data.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Daftar_Data.Designer.cs">
       <DependentUpon>Daftar_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Daftar_Katering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daftar_Katering.Designer.cs">
+      <DependentUpon>Daftar_Katering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Daftar_Reservasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daftar_Reservasi.Designer.cs">
+      <DependentUpon>Daftar_Reservasi.cs</DependentUpon>
     </Compile>
     <Compile Include="Halaman_Utama.cs">
       <SubType>Form</SubType>
@@ -78,8 +96,17 @@
     <Compile Include="Tamu.Designer.cs">
       <DependentUpon>Tamu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Daftar Tamu.resx">
+      <DependentUpon>Daftar Tamu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Daftar_Data.resx">
       <DependentUpon>Daftar_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Daftar_Katering.resx">
+      <DependentUpon>Daftar_Katering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Daftar_Reservasi.resx">
+      <DependentUpon>Daftar_Reservasi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Halaman_Utama.resx">
       <DependentUpon>Halaman_Utama.cs</DependentUpon>

@@ -23,5 +23,31 @@ namespace UAS_PABD
             hu.Show();
             this.Hide();
         }
+
+        private void Daftar_Data_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTamu_Click(object sender, EventArgs e)
+        {
+            Daftar_Tamu du = new Daftar_Tamu();
+            du.Show();
+            this.Hide();
+        }
+
+        private void btnRsv_Click(object sender, EventArgs e)
+        {
+            Daftar_Reservasi dr = new Daftar_Reservasi();
+            dr.Show();
+            this.Hide();
+        }
+
+        private void btnCtr_Click(object sender, EventArgs e)
+        {
+            Daftar_Katering dk = new Daftar_Katering();
+            dk.Show();
+            this.Hide();
+        }
     }
 }

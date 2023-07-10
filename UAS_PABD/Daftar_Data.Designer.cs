@@ -43,6 +43,7 @@
             this.btnTamu.TabIndex = 0;
             this.btnTamu.Text = "TAMU";
             this.btnTamu.UseVisualStyleBackColor = true;
+            this.btnTamu.Click += new System.EventHandler(this.btnTamu_Click);
             // 
             // label1
             // 
@@ -50,7 +51,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(269, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 39);
+            this.label1.Size = new System.Drawing.Size(246, 38);
             this.label1.TabIndex = 3;
             this.label1.Text = "DAFTAR DATA";
             // 
@@ -62,18 +63,21 @@
             this.btnRsv.TabIndex = 4;
             this.btnRsv.Text = "RESERVASI";
             this.btnRsv.UseVisualStyleBackColor = true;
+            this.btnRsv.Click += new System.EventHandler(this.btnRsv_Click);
             // 
             // btnCtr
             // 
-            this.btnCtr.Location = new System.Drawing.Point(551, 267);
+            this.btnCtr.Location = new System.Drawing.Point(522, 267);
             this.btnCtr.Name = "btnCtr";
             this.btnCtr.Size = new System.Drawing.Size(121, 33);
             this.btnCtr.TabIndex = 5;
             this.btnCtr.Text = "CATERING";
             this.btnCtr.UseVisualStyleBackColor = true;
+            this.btnCtr.Click += new System.EventHandler(this.btnCtr_Click);
             // 
             // btnBack
             // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(713, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
@@ -94,6 +98,7 @@
             this.Controls.Add(this.btnTamu);
             this.Name = "Daftar_Data";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Daftar_Data_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

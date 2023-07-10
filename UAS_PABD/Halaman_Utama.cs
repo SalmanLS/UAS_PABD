@@ -42,5 +42,12 @@ namespace UAS_PABD
         {
 
         }
+
+        private void btndaftar_Click(object sender, EventArgs e)
+        {
+            Daftar_Data dd = new Daftar_Data();
+            dd.Show();
+            this.Hide();
+        }
     }
 }

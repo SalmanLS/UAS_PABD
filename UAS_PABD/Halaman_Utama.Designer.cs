@@ -32,11 +32,12 @@
             this.btnKatering = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReservasi = new System.Windows.Forms.Button();
+            this.btndaftar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTamu
             // 
-            this.btnTamu.Location = new System.Drawing.Point(307, 188);
+            this.btnTamu.Location = new System.Drawing.Point(307, 155);
             this.btnTamu.Name = "btnTamu";
             this.btnTamu.Size = new System.Drawing.Size(157, 39);
             this.btnTamu.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // btnKatering
             // 
-            this.btnKatering.Location = new System.Drawing.Point(307, 278);
+            this.btnKatering.Location = new System.Drawing.Point(307, 270);
             this.btnKatering.Name = "btnKatering";
             this.btnKatering.Size = new System.Drawing.Size(157, 39);
             this.btnKatering.TabIndex = 1;
@@ -69,7 +70,7 @@
             // 
             // btnReservasi
             // 
-            this.btnReservasi.Location = new System.Drawing.Point(307, 233);
+            this.btnReservasi.Location = new System.Drawing.Point(307, 213);
             this.btnReservasi.Name = "btnReservasi";
             this.btnReservasi.Size = new System.Drawing.Size(157, 39);
             this.btnReservasi.TabIndex = 4;
@@ -77,11 +78,22 @@
             this.btnReservasi.UseVisualStyleBackColor = true;
             this.btnReservasi.Click += new System.EventHandler(this.btnReservasi_Click);
             // 
+            // btndaftar
+            // 
+            this.btndaftar.Location = new System.Drawing.Point(307, 328);
+            this.btndaftar.Name = "btndaftar";
+            this.btndaftar.Size = new System.Drawing.Size(157, 39);
+            this.btndaftar.TabIndex = 5;
+            this.btndaftar.Text = "DAFTAR DATA";
+            this.btndaftar.UseVisualStyleBackColor = true;
+            this.btndaftar.Click += new System.EventHandler(this.btndaftar_Click);
+            // 
             // Halaman_Utama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btndaftar);
             this.Controls.Add(this.btnReservasi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnKatering);
@@ -100,6 +112,7 @@
         private System.Windows.Forms.Button btnKatering;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReservasi;
+        private System.Windows.Forms.Button btndaftar;
     }
 }
 
