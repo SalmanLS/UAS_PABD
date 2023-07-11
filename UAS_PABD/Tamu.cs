@@ -34,11 +34,12 @@ namespace UAS_PABD
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            tgl = dtTanggal.Value;
+            
             string queryString = "Update dbo.Tamu set namaTamu='" + txtNama.Text + "', no_telfon='" + txtTlfn.Text + 
                 "', jenisKelamin='" + txtJk.Text + "', jalan='" + txtJln.Text + "', kecamatan='" + txtKcmtn.Text + "', kabupaten='" + txtKbptn.Text 
                 + "' where id_tamu='" + txtID.Text + "'";
-            string qs = "Update dbo.Data_Tamu set id_karyawan=@idk, tgl_kunjung=@tgl where id_tamu= " + txtID;            
+            string qs = "Update dbo.Data_Tamu set id_karyawan='" + cbxKrywn.Text + "', tgl_kunjung='" + dtTanggal.Value + 
+                "' where id_tamu='" + txtID.Text + "'";
             SqlCommand cmd = new SqlCommand(queryString, koneksi);
             SqlCommand cmds = new SqlCommand(qs, koneksi);
             try
@@ -47,8 +48,6 @@ namespace UAS_PABD
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 cmds.CommandType = CommandType.Text;
-                cmds.Parameters.AddWithValue("@idk", cbxKrywn.Text);
-                cmds.Parameters.AddWithValue("@tgl", tgl);
                 cmds.ExecuteNonQuery();
                 koneksi.Close();
                 MessageBox.Show("Update Data Berhasil");
@@ -83,6 +82,7 @@ namespace UAS_PABD
             dtTanggal.Enabled = false;
             btnSave.Enabled = false;
             btnClear.Enabled = false;
+            btnUpdate.Enabled = false;
         }
         public Tamu()
         {
@@ -109,6 +109,7 @@ namespace UAS_PABD
             dtTanggal.Enabled = true;
             btnSave.Enabled = true;
             btnClear.Enabled = true;
+            btnUpdate.Enabled = true;
             Karyawancbx();
         }
 
