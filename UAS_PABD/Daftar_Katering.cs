@@ -16,6 +16,7 @@ namespace UAS_PABD
         private string stringConnection = "data source=LUTHFI\\MCH35;" +
            "database=Villa;User ID=sa; Password=12345";
         private SqlConnection koneksi;
+        private string cari, hapus;
         public Daftar_Katering()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace UAS_PABD
         private void dataGridView()
         {
             koneksi.Open();
-            string str = "select Katering.id_katering, Jenis_Katering.jenisKatering, Tamu.namaTamu, Reservasi.no_villa , Pemesanan.porsi, Pemesanan.totalHarga,Katering.hari, Pemesanan.tgl_pemesanan\r\nfrom Katering\r\ninner join Jenis_Katering on Katering.kode_jenisKatering = Jenis_Katering.kode_jenisKatering\r\ninner join Pemesanan on Katering.id_katering = Pemesanan.id_katering\r\ninner join Tamu on Tamu.id_tamu = Pemesanan.id_tamu\r\ninner join Reservasi on Reservasi.id_tamu = Pemesanan.id_tamu;";
+            string str = "select*from Pemesanan";
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -48,6 +49,48 @@ namespace UAS_PABD
         {
             dataGridView();
             btnOpen.Enabled = false;
+        }
+
+        private void deleteData()
+        {
+            hapus = txtSearch.Text;
+            koneksi.Open();
+            string sr = "delete from Pemesanan where id_tamu=@ds";
+            SqlCommand sc = new SqlCommand(sr, koneksi);
+            sc.CommandType = CommandType.Text;
+            sc.Parameters.Add(new SqlParameter("ds", hapus));
+            sc.ExecuteNonQuery();
+            koneksi.Close();
+
+            MessageBox.Show("Data berhasil dihapus!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            searchData();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            deleteData();
+            dataGridView();
+        }
+
+        private void searchData()
+        {
+            cari = txtSearch.Text;
+            string str = "select*from Pemesanan where id_tamu=@dd";
+            SqlCommand cm = new SqlCommand(str, koneksi);
+            koneksi.Open();
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.AddWithValue("@dd", cari);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            da.Fill(ds);
+            dataGridView1.DataSource= ds.Tables[0];
+            koneksi.Close();
+
         }
     }
 }

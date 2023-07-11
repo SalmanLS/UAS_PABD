@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace UAS_PABD
         private string stringConnection = "data source=LUTHFI\\MCH35;" +
            "database=Villa;User ID=sa; Password=12345";
         private SqlConnection koneksi;
+        private string cari,hapus;
         public Daftar_Tamu()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace UAS_PABD
         private void dataGridView()
         {
             koneksi.Open();
-            string str = "select*from Tamu";
+            string str = "select*from Data_Tamu";
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -51,7 +53,46 @@ namespace UAS_PABD
             dataGridView();
             btnOpen.Enabled = false;
         }
+        private void deleteData()
+        {
+            hapus = txtSearch.Text;
+            koneksi.Open();
+            string sr = "delete from Data_Tamu where id_tamu=@ds";
+            SqlCommand sc = new SqlCommand(sr, koneksi);
+            sc.CommandType = CommandType.Text;
+            sc.Parameters.Add(new SqlParameter("ds", hapus));
+            sc.ExecuteNonQuery();
+            koneksi.Close();
 
-        
+            MessageBox.Show("Data berhasil dihapus!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+        private void searchData()
+        {
+            cari = txtSearch.Text;
+            string str = "select*from Data_Tamu where id_tamu=@dd";
+            SqlCommand cm = new SqlCommand(str,koneksi);
+            koneksi.Open();
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.AddWithValue("@dd",cari);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            da.Fill(ds);
+            dataGridView1.DataSource= ds.Tables[0];
+            koneksi.Close();
+           
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            searchData();
+            btnSearch.Enabled = false;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            deleteData();
+            dataGridView();
+        }
     }
 }
