@@ -8,13 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UAS_PABD
 {
     public partial class Tamu : Form
     {
-        private string stringConnection = "data source=LUTHFI\\MCH35;"+
-           "database=Villa;User ID=sa; Password=12345";
+        private string stringConnection = "data source=DESKTOP-NKUDL8D\\DIMASDAMAR;" +
+           "database=Villa;User ID=sa; Password=magic118";
         private SqlConnection koneksi;
         private string nama, jk, notlfon, noktp,jln,kcmtn,kabupaten,krywn;
         private DateTime tgl;
@@ -29,6 +30,35 @@ namespace UAS_PABD
             Halaman_Utama hu = new Halaman_Utama();
             hu.Show();
             this.Hide();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            tgl = dtTanggal.Value;
+            string queryString = "Update dbo.Tamu set namaTamu='" + txtNama.Text + "', no_telfon='" + txtTlfn.Text + 
+                "', jenisKelamin='" + txtJk.Text + "', jalan='" + txtJln.Text + "', kecamatan='" + txtKcmtn.Text + "', kabupaten='" + txtKbptn.Text 
+                + "' where id_tamu='" + txtID.Text + "'";
+            string qs = "Update dbo.Data_Tamu set id_karyawan=@idk, tgl_kunjung=@tgl where id_tamu= " + txtID;            
+            SqlCommand cmd = new SqlCommand(queryString, koneksi);
+            SqlCommand cmds = new SqlCommand(qs, koneksi);
+            try
+            {
+                koneksi.Open();
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                cmds.CommandType = CommandType.Text;
+                cmds.Parameters.AddWithValue("@idk", cbxKrywn.Text);
+                cmds.Parameters.AddWithValue("@tgl", tgl);
+                cmds.ExecuteNonQuery();
+                koneksi.Close();
+                MessageBox.Show("Update Data Berhasil");
+                refreshform();
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Terdapat sebuah error : " + ex.Message + "(Error code : " + ex.Number + ")");
+            }
+            
         }
 
         private void refreshform()
