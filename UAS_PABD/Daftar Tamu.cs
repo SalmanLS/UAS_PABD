@@ -51,5 +51,7 @@ namespace UAS_PABD
             dataGridView();
             btnOpen.Enabled = false;
         }
+
+        
     }
 }
