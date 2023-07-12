@@ -38,7 +38,7 @@ namespace UAS_PABD
             string queryString = "Update dbo.Tamu set namaTamu='" + txtNama.Text + "', no_telfon='" + txtTlfn.Text + 
                 "', jenisKelamin='" + txtJk.Text + "', jalan='" + txtJln.Text + "', kecamatan='" + txtKcmtn.Text + "', kabupaten='" + txtKbptn.Text 
                 + "' where id_tamu='" + txtID.Text + "'";
-            string qs = "Update dbo.Data_Tamu set id_karyawan='" + cbxKrywn.Text + "', tgl_kunjung='" + dtTanggal.Value + 
+            string qs = "Update dbo.Data_Tamu set id_karyawan='" + cbxKrywn.Text +
                 "' where id_tamu='" + txtID.Text + "'";
             SqlCommand cmd = new SqlCommand(queryString, koneksi);
             SqlCommand cmds = new SqlCommand(qs, koneksi);

@@ -90,15 +90,37 @@ namespace UAS_PABD
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string idt = "";
             koneksi.Open();
+            string strs = "select id_tamu from dbo.Tamu where namaTamu = @d";
+            SqlCommand cme = new SqlCommand(strs, koneksi);
+            cme.CommandType = CommandType.Text;
+            cme.Parameters.Add(new SqlParameter("@d", cbxNama.Text));
+            SqlDataReader d = cme.ExecuteReader();
+            while (d.Read())
+            {
+                idt = d["id_tamu"].ToString();
+            }
+            d.Close();
+            int idk = 0;
+            int jkr = 0;
+            string ste = "select id_katering from dbo.Katering where kode_jenisKatering = @ds";
+            SqlCommand cms = new SqlCommand(ste, koneksi);
+            cms.CommandType = CommandType.Text;
+            cms.Parameters.Add(new SqlParameter("@ds", jkr));
+            SqlDataReader rd = cms.ExecuteReader();
+            while (rd.Read())
+            {
+                idk = int.Parse(rd["id_katering"].ToString());
+            }
+            rd.Close();
             int harga = int.Parse(txtHrga.Text);
-            totalHarga(hrg, txtPorsi.Text, txtHari.Text);
+            totalHarga(txtHrga.Text, txtPorsi.Text, txtHari.Text);
             string queryString = "Update dbo.Katering set kode_jenisKatering ='" + cbxJk.Text
-                + "', hari='" + txtHari.Text + "', tanggal='" + dtTanggal.Value + "', tanggal='" + harga
-                + "' where id_katering='" + cbxNama.Text + "'";
-            string qs = "Update dbo.Pemesanan set tgl_pemesanan ='" + dtTanggal.Value
-                + "', porsi='" + txtPorsi.Text + "', totalHarga='" + total
-                + "' where id_tamu='" + cbxNama.Text + "'";
+                + "', hari='" + txtHari.Text + "', hargaKatering='" + harga
+                + "' where id_katering='" + idk + "'";
+            string qs = "Update dbo.Pemesanan set porsi='" + txtPorsi.Text + "', totalHarga='" + total
+                + "' where id_tamu='" + idt + "'";
 
             SqlCommand cmd = new SqlCommand(queryString, koneksi);
             SqlCommand cmds = new SqlCommand(qs, koneksi);
