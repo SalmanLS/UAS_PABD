@@ -14,8 +14,8 @@ namespace UAS_PABD
 {
     public partial class Tamu : Form
     {
-        private string stringConnection = "data source=DESKTOP-NKUDL8D\\DIMASDAMAR;" +
-           "database=Villa;User ID=sa; Password=magic118";
+        private string stringConnection = "data source=LUTHFI\\MCH35;" +
+           "database=Villa;User ID=sa; Password=12345";
         private SqlConnection koneksi;
         private string nama, jk, notlfon, noktp,jln,kcmtn,kabupaten,krywn;
         private DateTime tgl;
@@ -58,6 +58,11 @@ namespace UAS_PABD
                 MessageBox.Show("Terdapat sebuah error : " + ex.Message + "(Error code : " + ex.Number + ")");
             }
             
+        }
+
+        private void Tamu_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void refreshform()

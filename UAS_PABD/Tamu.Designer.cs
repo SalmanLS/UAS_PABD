@@ -309,6 +309,7 @@
             this.Controls.Add(this.label4);
             this.Name = "Tamu";
             this.Text = "Tamu";
+            this.Load += new System.EventHandler(this.Tamu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
