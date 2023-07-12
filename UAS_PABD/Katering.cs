@@ -36,7 +36,8 @@ namespace UAS_PABD
             txtPorsi.Enabled = false;
             btnAdd.Enabled = true;
             btnClear.Enabled = false;
-            btnSave.Enabled = false;    
+            btnSave.Enabled = false;
+            btnUpdate.Enabled = false;
         }
 
         private void Katering_Load(object sender, EventArgs e)
@@ -62,6 +63,7 @@ namespace UAS_PABD
             btnAdd.Enabled = false;
             btnClear.Enabled = true;
             btnSave.Enabled = true;
+            btnUpdate.Enabled = true;
             jenisKcbx();
             Namatcbx();
         }
@@ -84,6 +86,38 @@ namespace UAS_PABD
             cbxJk.DisplayMember = "jenisKatering";
             cbxJk.ValueMember = "kode_jenisKatering";
             cbxJk.DataSource = ds.Tables[0];
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            koneksi.Open();
+            int harga = int.Parse(txtHrga.Text);
+            totalHarga(hrg, txtPorsi.Text, txtHari.Text);
+            string queryString = "Update dbo.Katering set kode_jenisKatering ='" + cbxJk.Text
+                + "', hari='" + txtHari.Text + "', tanggal='" + dtTanggal.Value + "', tanggal='" + harga
+                + "' where id_katering='" + cbxNama.Text + "'";
+            string qs = "Update dbo.Pemesanan set tgl_pemesanan ='" + dtTanggal.Value
+                + "', porsi='" + txtPorsi.Text + "', totalHarga='" + total
+                + "' where id_tamu='" + cbxNama.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(queryString, koneksi);
+            SqlCommand cmds = new SqlCommand(qs, koneksi);
+
+            try
+            {
+                
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                cmds.CommandType = CommandType.Text;
+                cmds.ExecuteNonQuery();
+                koneksi.Close();
+                MessageBox.Show("Update Data Berhasil");
+                refreshform();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Terdapat sebuah error : " + ex.Message + "(Error code : " + ex.Number + ")");
+            }
         }
 
         private void Namatcbx()
