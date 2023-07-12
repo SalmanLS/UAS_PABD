@@ -31,6 +31,7 @@ namespace UAS_PABD
             btnSave.Enabled = false;
             btnClear.Enabled = false;
             btnAdd.Enabled = true;
+            btnUpdate.Enabled = false;
         }
         public Reservasi()
         {
@@ -62,6 +63,7 @@ namespace UAS_PABD
             btnClear.Enabled = true;
             btnAdd.Enabled = true;
             btnSave.Enabled = true;
+            btnUpdate.Enabled=true;
             Tamucbx();
             Villacbx();
         }
@@ -104,6 +106,28 @@ namespace UAS_PABD
             cbxJnsvilla.DisplayMember = "jenisVilla";
             cbxJnsvilla.ValueMember = "no_villa";
             cbxJnsvilla.DataSource = ds.Tables[0];
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string queryString = "Update dbo.Reservasi set no_villa='" + cbxJnsvilla.Text 
+                + "', lamaSewa='" + txtLm.Text
+                + "' where id_tamu='" + cbxNama.Text + "'";
+            
+            SqlCommand cmd = new SqlCommand(queryString, koneksi);
+            try
+            {
+                koneksi.Open();
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                koneksi.Close();
+                MessageBox.Show("Update Data Berhasil");
+                refreshform();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Terdapat sebuah error : " + ex.Message + "(Error code : " + ex.Number + ")");
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)

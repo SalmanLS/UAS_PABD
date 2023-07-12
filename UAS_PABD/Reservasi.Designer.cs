@@ -42,6 +42,7 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.txtLm = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -94,7 +95,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(360, 297);
+            this.btnClear.Location = new System.Drawing.Point(299, 297);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(72, 25);
             this.btnClear.TabIndex = 20;
@@ -170,6 +171,16 @@
             this.label6.TabIndex = 26;
             this.label6.Text = "Hari";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(402, 297);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(80, 25);
+            this.btnUpdate.TabIndex = 27;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // Reservasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -177,6 +188,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 422);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dtRsv);
@@ -213,5 +225,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txtLm;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
